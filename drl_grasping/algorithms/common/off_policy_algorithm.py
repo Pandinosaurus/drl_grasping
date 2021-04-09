@@ -3,6 +3,8 @@
 
 # Note: needs to be included before `from stable_baselines3.common.off_policy_algorithm import OffPolicyAlgorithm` in the module that uses this
 
+# TODO: Try running without monkey patch to OffPolicyAlgorithm to see its influence
+
 from stable_baselines3.common.off_policy_algorithm import OffPolicyAlgorithm
 
 from typing import Any, Dict, List

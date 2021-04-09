@@ -12,8 +12,8 @@ import gym
 # env_id="Reach-Octree-Gazebo-v0"
 # env_id="Reach-OctreeWithColor-Gazebo-v0"
 # Grasp
-env_id = "Grasp-Octree-Gazebo-v0"
-# env_id = "Grasp-OctreeWithColor-Gazebo-v0"
+# env_id = "Grasp-Octree-Gazebo-v0"
+env_id = "Grasp-OctreeWithColor-Gazebo-v0"
 
 
 def make_env_from_id(env_id: str, **kwargs) -> gym.Env:
@@ -30,11 +30,13 @@ def main(args=None):
 
     # Wrap environment with randomizer
     env = ManipulationGazeboEnvRandomizer(env=make_env,
+                                          robot_random_joint_positions=True,
+                                          camera_pose_rollouts_num=1,
+                                          ground_model_rollouts_num=1,
                                           object_random_pose=True,
-                                          object_models_rollouts_num=1,
                                           object_random_use_mesh_models=True,
-                                          object_random_model_count=3,
-                                          ground_model_rollouts_num=1)
+                                          object_models_rollouts_num=1,
+                                          object_random_model_count=4)
 
     # Initialize random seed
     env.seed(42)

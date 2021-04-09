@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S python3 -O
 
 import argparse
 import os
@@ -198,7 +198,7 @@ if __name__ == "__main__":
 
     # Test duration
     parser.add_argument("-n", "--n-timesteps", type=int,
-                        default=10000,
+                        default=1000,
                         help="Overwrite the number of timesteps")
 
     # Random seed
